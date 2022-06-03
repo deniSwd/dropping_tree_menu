@@ -5,14 +5,13 @@ import {getMyObject, selectObject,} from '../../app/treeSlice';
 export function MyMenu() {
   const myObject = useAppSelector(selectObject);
   const dispatch = useAppDispatch();
-console.log(myObject)
   return (
     <div>
       <button onClick={()=>dispatch(getMyObject())}>
-        MY MENU
+        My Tree
       </button>
       <div>
-        {JSON.stringify(myObject)}
+        {Object.keys(myObject).map(key => <div>{key}</div> )}
       </div>
     </div>
   );

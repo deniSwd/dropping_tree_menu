@@ -1,10 +1,11 @@
 import React from 'react';
 import {MyMenu} from './components/myMenu/MyMenu';
-import './App.css';
+import s from './App.module.css';
+
 
 function App() {
   return (
-    <div>
+    <div className={s.menu}>
       <MyMenu/>
     </div>
   )

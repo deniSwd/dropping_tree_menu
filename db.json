@@ -1,91 +1,66 @@
 {
-  "myTree": [
-    {
-      "Mercedes-Benz": [
-        {
-          "A-Class": [
-            "hatchback",
-            "saloon"
-          ]
+  "myTree": {
+    "Mercedes-Benz": {
+      "A-Class": {
+        "hatchback": {},
+        "saloon": {}
+      },
+      "B-Class": {
+        "Sports Tourer": {}
+      },
+      "C-Class": {
+        "Sedan": {},
+        "Estate": {}
+      }
+    },
+    "BMW": {
+      "Series 1": {
+        "Petrol": {},
+        "Diesel": {}
+      },
+      "Series 2": {
+        "Petrol": {},
+        "Diesel": {}
+      },
+      "Series 4": {
+        "Cabriolet": {
+          "Petrol": {},
+          "Diesel": {}
         },
-        {
-          "B-Class": [
-            "Sports Tourer"
-          ]
-        },
-        {
-          "C-Class": [
-            "Sedan",
-            "Estate"
-          ]
+        "Coupe": {
+          "Petrol": {},
+          "Diesel": {}
         }
-      ]
+      }
     },
-    {
-      "BMW": [
-        {
-          "Series 1": [
-            "Petrol",
-            "Diesel"
-          ]
-        },
-        {
-          "Series 2": [
-            "Petrol",
-            "Diesel"
-          ]
-        },
-        {
-          "Series 4": [
-            {
-              "Cabriolet": [
-                "Petrol",
-                "Diesel"
-              ]
-            },
-            {
-              "Coupe": [
-                "Petrol",
-                "Diesel"
-              ]
-            }
-          ]
-        }
-      ]
+    "Lada Bublik": {
+      "1 wheel": {},
+      "2 wheel": {},
+      "3 wheel": {}
     },
-    {
-      "Lada Bublik": [
-        "1 wheel",
-        "2 wheel",
-        "3 wheel"
-      ]
+    "Niva 1.5 x 1.5": {
+      "Petrol": {},
+      "Diesel": {},
+      "Horse": {}
     },
-    {
-      "Niva 1.5 x 1.5": [
-        "Petrol",
-        "Diesel",
-        "Horse"
-      ]
+    "Color": {
+      "Transparent": {},
+      "Matte": {
+        "white": {},
+        "black": {},
+        "yellow": {},
+        "red": {}
+      }
     },
-    {
-      "Color": [
-        "Transparent",
-        {
-          "Matte": [
-            "white",
-            "black",
-            "yellow",
-            "red"
-          ]
-        },
-        {
-          "Glossy": [
-            "green",
-            "brown",
-            "pink"
-          ]
-        }
-      ]
+    "Glossy": {
+      "green": {},
+      "brown": {},
+      "pink": {}
     }
-  ]
+  }
 }
+
+
+
+
+
