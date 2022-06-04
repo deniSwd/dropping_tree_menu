@@ -1,18 +1,17 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {AppThunk, RootState} from './store';
-import {userAPI} from "../API/menuAPI";
+import {TreeType, userAPI} from "../API/menuAPI";
 
 
 const initialState = {
-  myObject: {}
+  myObject: {} as TreeType
 };
-export const initialStateType = typeof initialState
 
 export const treeSlice = createSlice({
   name: 'tree',
   initialState,
   reducers: {
-    setMyObject: (state, action: PayloadAction<any>) => {
+    setMyObject: (state, action: PayloadAction<TreeType>) => {
       state.myObject = action.payload;
     }
   }

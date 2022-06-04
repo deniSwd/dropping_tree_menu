@@ -1,56 +1,56 @@
 {
   "myTree": {
-    "Mercedes-Benz": {
-      "A-Class": {
-        "hatchback": {},
-        "saloon": {}
-      },
-      "B-Class": {
-        "Sports Tourer": {}
-      },
-      "C-Class": {
-        "Sedan": {},
-        "Estate": {}
-      }
+    "myTree": {
+  "Mercedes-Benz": {
+    "A-Class": {
+      "hatchback": {},
+      "saloon": {}
     },
-    "BMW": {
-      "Series 1": {
-        "Petrol": {},
-        "Diesel": {}
-      },
-      "Series 2": {
-        "Petrol": {},
-        "Diesel": {}
-      },
-      "Series 4": {
-        "Cabriolet": {
-          "Petrol": {},
-          "Diesel": {}
-        },
-        "Coupe": {
-          "Petrol": {},
-          "Diesel": {}
-        }
-      }
+    "B-Class": {
+      "Sports Tourer": {}
     },
-    "Lada Bublik": {
-      "1 wheel": {},
-      "2 wheel": {},
-      "3 wheel": {}
-    },
-    "Niva 1.5 x 1.5": {
+    "C-Class": {
+      "Sedan": {},
+      "Estate": {}
+    }
+  },
+  "BMW": {
+    "Series 1": {
       "Petrol": {},
-      "Diesel": {},
-      "Horse": {}
+      "Diesel": {}
     },
-    "Color": {
-      "Transparent": {},
-      "Matte": {
-        "white": {},
-        "black": {},
-        "yellow": {},
-        "red": {}
+    "Series 2": {
+      "Petrol": {},
+      "Diesel": {}
+    },
+    "Series 4": {
+      "Cabriolet": {
+        "Petrol": {},
+        "Diesel": {}
+      },
+      "Coupe": {
+        "Petrol": {},
+        "Diesel": {}
       }
+    }
+  },
+  "Lada Bublik": {
+    "1 wheel": {},
+    "2 wheel": {},
+    "3 wheel": {}
+  },
+  "Niva 1.5 x 1.5": {
+    "Petrol": {},
+    "Diesel": {},
+    "Horse": {}
+  },
+  "Color": {
+    "Transparent": {},
+    "Matte": {
+      "white": {},
+      "black": {},
+      "yellow": {},
+      "red": {}
     },
     "Glossy": {
       "green": {},
@@ -58,6 +58,8 @@
       "pink": {}
     }
   }
+}
+}
 }
 
 

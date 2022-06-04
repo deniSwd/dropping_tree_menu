@@ -1,12 +1,20 @@
-import React from 'react';
-import {MyMenu} from './components/myMenu/MyMenu';
-import s from './App.module.css';
+import React, {useEffect} from 'react';
+import {Branch} from './components/myMenu/Branch';
+import s from './App.module.scss';
+import {useAppDispatch, useAppSelector} from "./app/hooks";
+import {getMyObject, selectObject} from "./app/treeSlice";
 
 
-function App() {
+export const App = () => {
+  const myObject = useAppSelector(selectObject);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getMyObject())
+  }, [dispatch])
+  console.log (myObject)
   return (
-    <div className={s.menu}>
-      <MyMenu/>
+    <div className={s.tree}>
+      <Branch currentObject={myObject}/>
     </div>
   )
 }
