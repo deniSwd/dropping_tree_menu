@@ -13,17 +13,23 @@ export const Branch: FC<BranchPropsType> = ({currentObject, parentKey}) => {
 
   return (
     <div className={s.branch}>
-      {parentKey && <div>
-        {Object.keys(currentObject).length > 0 &&
-            <button className={s.button}
-                    onClick={() => setDisplayObject(!displayObject)}>
-              {displayObject ? '-': '+'}
-            </button>}
-          <span>{parentKey}</span>
-      </div>}
-      {displayObject && <div>
-        {Object.keys(currentObject).map(key => <Branch currentObject={currentObject[key]} parentKey={key}/>)}
-      </div>}
+      {parentKey &&
+          <div>
+              <div className={s.branchItem}>
+                {Object.keys(currentObject).length > 0 &&
+                    <div className={s.button}>
+                      {displayObject ? '-' : '+'}
+                    </div>}
+                  <div className={s.branchName}
+                       onClick={() => setDisplayObject(!displayObject)}>
+                    {parentKey}
+                  </div>
+              </div>
+          </div>}
+      {displayObject &&
+          <div>
+            {Object.keys(currentObject).map(key => <Branch currentObject={currentObject[key]} parentKey={key}/>)}
+          </div>}
     </div>
   )
 }
