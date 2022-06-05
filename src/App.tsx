@@ -11,10 +11,9 @@ export const App = () => {
   useEffect(() => {
     dispatch(getMyObject())
   }, [dispatch])
-  console.log (myObject)
   return (
     <div className={s.tree}>
-      <Branch currentObject={myObject}/>
+      <Branch currentObject={myObject} parentKey={'root'}/>
     </div>
   )
 }

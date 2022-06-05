@@ -4,34 +4,26 @@ import {TreeType} from "../../API/menuAPI";
 
 type BranchPropsType = {
   currentObject: TreeType
+  parentKey?: string
 }
 
-export const Branch: FC<BranchPropsType> = ({currentObject}) => {
+export const Branch: FC<BranchPropsType> = ({currentObject, parentKey}) => {
 
-  const [displayObject, setDisplayObject] = useState<boolean>(false)
-  console.log(Object.keys(currentObject))
+  const [displayObject, setDisplayObject] = useState(false)
+
   return (
     <div className={s.branch}>
-      <div>
-
-        <div className={s.childObject}>
-          {Object.keys(currentObject).map(currentKey =>
-            <div className={s.item}>
-              {Object.keys(currentObject).length > 0 &&
-                  <button className={s.button}
-                          onClick={() => setDisplayObject(!displayObject)}>
-                      +
-                  </button>
-              }
-              <div>
-                {currentKey}
-              </div>
-              {displayObject &&
-                  <Branch currentObject={currentObject[currentKey]}/>}
-            </div>
-          )}
-        </div>
-      </div>
+      {parentKey && <div>
+        {Object.keys(currentObject).length > 0 &&
+            <button className={s.button}
+                    onClick={() => setDisplayObject(!displayObject)}>
+              {displayObject ? '-': '+'}
+            </button>}
+          <span>{parentKey}</span>
+      </div>}
+      {displayObject && <div>
+        {Object.keys(currentObject).map(key => <Branch currentObject={currentObject[key]} parentKey={key}/>)}
+      </div>}
     </div>
-  );
+  )
 }
