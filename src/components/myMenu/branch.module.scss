@@ -1,4 +1,14 @@
 @import '../../App.module';
+
+%branch-font {
+  margin-left: 5px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
 .branch {
   margin-left:  30px;
 
@@ -12,6 +22,7 @@
     background-size: 200% auto;
     color: black;
     box-shadow: 0 0 20px #eee;
+    cursor: pointer;
 
     &:hover {
       background-position: right center; /* change the direction of the change here */
@@ -29,13 +40,11 @@
     }
 
     .branchName {
-      margin-left: 5px;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 20px;
-      text-transform: uppercase;
-      cursor: pointer;
+     @extend %branch-font;
+    }
+    .branchPathName{
+      @extend %branch-font;
+      color: white;
     }
   }
 }

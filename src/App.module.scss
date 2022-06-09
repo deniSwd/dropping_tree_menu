@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Roboto&family=Roboto+Condensed:wght@700&family=Source+Sans+Pro&display=swap');
 
-.tree {
-display: flex;
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .path {
+    position: fixed;
+    left: 50%;
+    width: 60%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 18px;;
+    background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 100%, #8e9eab 51%);
+    transform: translate(-50%);
+  }
+
+  .tree {
+    display: flex;
     justify-content: center;
+    margin-top: 50px;
+  }
 }
+
