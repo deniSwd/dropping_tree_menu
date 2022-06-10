@@ -18,7 +18,7 @@ export const App = () => {
         PATH: {isPath}
       </div>
       <div className={s.tree}>
-        <Branch currentObject={myObject} parentKey={'root'} /> {/*add index*/}
+        <Branch currentObject={myObject} parentKey={'root'} deepIndex={0}/> {/*add index*/}
       </div>
     </div>
   )

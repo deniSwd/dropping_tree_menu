@@ -10,13 +10,14 @@
 }
 
 .branch {
-  margin-left:  30px;
+  margin-left: 30px;
+  user-select: none;
 
   .branchItem {
     display: flex;
     height: 20px;
     width: 180px;
-    background-image:linear-gradient(to right, #8e9eab 0%, #eef2f3  51%, #8e9eab  100%);
+    background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
     padding: 10px;
     transition: 0.5s;
     background-size: 200% auto;
@@ -40,9 +41,10 @@
     }
 
     .branchName {
-     @extend %branch-font;
+      @extend %branch-font;
     }
-    .branchPathName{
+
+    .branchPathName {
       @extend %branch-font;
       color: white;
     }

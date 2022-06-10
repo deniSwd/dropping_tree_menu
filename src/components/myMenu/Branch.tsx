@@ -8,11 +8,12 @@ type BranchPropsType = {
   currentObject: TreeType
   parentKey: string
   parentPath?: Array<string>
+  deepIndex: number
 }
 
-export const Branch: FC<BranchPropsType> = ({currentObject, parentKey, parentPath = []}) => {
-  const dispatch = useAppDispatch();
-  const isPath = useAppSelector(selectPath);
+export const Branch: FC<BranchPropsType> = ({currentObject, parentKey, parentPath = [], deepIndex}) => {
+  const dispatch = useAppDispatch()
+  const selectedPath = useAppSelector(selectPath)
   const path = useMemo(() => [...parentPath, parentKey], [parentKey, parentPath])
   const [displayObject, setDisplayObject] = useState(false)
 
@@ -20,6 +21,13 @@ export const Branch: FC<BranchPropsType> = ({currentObject, parentKey, parentPat
     setDisplayObject(!displayObject)
     dispatch(setPath(path))
   }
+
+  const isActive = useMemo(() => {
+    for (let i = 0; i < selectedPath.length; i++)
+      if (selectedPath[deepIndex - i] !== path[deepIndex - i])
+        return false
+    return true
+  }, [deepIndex, selectedPath, path])
 
   return (
     <div className={s.branch}>
@@ -30,16 +38,19 @@ export const Branch: FC<BranchPropsType> = ({currentObject, parentKey, parentPat
                     <div className={s.button}>
                       {displayObject ? '-' : '+'}
                     </div>}
-                  <div className={isPath.includes(parentKey) && displayObject ? s.branchPathName : s.branchName }>
+                  <div className={isActive && displayObject
+                    ? s.branchPathName : s.branchName}>
                     {parentKey}
                   </div>
               </div>
           </div>}
       {displayObject &&
           <div>
-            {Object.keys(currentObject).map(key => <Branch currentObject={currentObject[key]}
-                                                           parentKey={key}
-                                                           parentPath={path}/>)}
+            {Object.keys(currentObject).map(key =>
+              <Branch currentObject={currentObject[key]}
+                      parentKey={key}
+                      parentPath={path}
+                      deepIndex={deepIndex + 1}/>)}
           </div>}
     </div>
   )

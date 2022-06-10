@@ -4,7 +4,7 @@ import {TreeType, userAPI} from "../API/menuAPI";
 
 const initialState = {
   myObject: {} as TreeType,
-  isPath: [] as Array<string>
+  selectedPath: [] as Array<string>
 };
 
 export const treeSlice = createSlice({
@@ -15,15 +15,15 @@ export const treeSlice = createSlice({
       state.myObject = action.payload;
     },
     setPath: (state, action: PayloadAction<Array<string>>) => {
-      state.isPath = action.payload
+      state.selectedPath = action.payload
     }
   }
 })
 
 export const {setMyObject, setPath} = treeSlice.actions;
 
-export const selectObject = (state: RootState) => state.tree.myObject;
-export const selectPath = (state: RootState) => state.tree.isPath;
+export const selectObject = (state: RootState) => state.tree.myObject
+export const selectPath = (state: RootState) => state.tree.selectedPath
 
 
 export const getMyObject = (): AppThunk =>
